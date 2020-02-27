@@ -1,3 +1,4 @@
+require 'pry'
 # Provided, don't edit
 require 'directors_database'
 
@@ -21,13 +22,9 @@ def flatten_a_o_a(aoa)
 end
 
 def movie_with_director_name(director_name, movie_data)
-  { 
-    :title => movie_data[:title],
-    :worldwide_gross => movie_data[:worldwide_gross],
-    :release_year => movie_data[:release_year],
-    :studio => movie_data[:studio],
-    :director_name => director_name
-  }
+  new_movie = movie_data
+  new_movie[:director_name] = director_name
+  return new_movie
 end
 
 
@@ -48,6 +45,7 @@ def movies_with_director_key(name, movies_collection)
   # Array of Hashes where each Hash represents a movie; however, they should all have a
   # :director_name key. This addition can be done by using the provided
   # movie_with_director_name method
+  binding.pry
 end
 
 
