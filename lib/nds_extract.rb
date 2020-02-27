@@ -92,9 +92,11 @@ def movies_with_directors_set(source)
   source.each_with_index do |hash, index|
     new_array << hash[:movies]
     new_array[index].each do |hash2|
-      movie_with_director_name(director_name, movie_data)
+      movie_with_director_name(hash[:name], hash2)
+    end
+  end
+  return new_array
   
-end
 
 # ----------------    End of Your Code Region --------------------
 # Don't edit the following code! Make the methods above work with this method
