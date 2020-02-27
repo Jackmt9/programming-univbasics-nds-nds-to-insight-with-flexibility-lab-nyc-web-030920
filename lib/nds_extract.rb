@@ -91,7 +91,8 @@ def movies_with_directors_set(source)
   new_array = []
   source.each_with_index do |hash, index|
     new_array << hash[:movies]
-    new_array[index].each |
+    new_array[index].each do |hash2|
+      movie_with_director_name(director_name, movie_data)
   
 end
 
